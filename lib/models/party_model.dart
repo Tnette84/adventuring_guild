@@ -11,6 +11,11 @@ class PartyModel extends ChangeNotifier {
   notifyListeners();
 }
 
+void removeAdventurer(Adventurer adventurer) {
+  _members.remove(adventurer);
+  notifyListeners();
+}
+
 int get totalGoldCost =>
     _members.fold(0, (total, adventurer) => total + adventurer.goldCost);
 }

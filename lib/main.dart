@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'models/party_model.dart';
+import 'screens/guild_hall_screen.dart';
+import 'screens/quest_party_summary.dart';
 
 void main() {
   runApp(
@@ -36,7 +38,14 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+home: const Scaffold(
+  body: Column(
+    children: [
+      Expanded(child: GuildHallRoster()),
+      QuestPartySummary(),
+    ],
+  ),
+),
     );
   }
 }
